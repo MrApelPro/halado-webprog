@@ -1,0 +1,24 @@
+<h3>Create new event</h3>
+<p>
+  <a [routerLink]="['']" class="p-button">Go back</a>
+</p>
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm.value)">
+  <p-fieldset legend="Event data">
+    <div class="flex flex-column gap-2 mb-2">
+      <label for="name">Event's name</label>
+      <input pInputText id="name" aria-describedby="name-help" formControlName="name" />
+      <small id="name-help">Give the event a name!</small>
+    </div>
+    <div class="flex flex-column gap-2 mb-2">
+      <label for="start">Event's start time</label>
+      <p-calendar formControlName="start" [showTime]="true" id="start" aria-describedby="start-help"></p-calendar>
+      <small id="name-help">Give the event a start time!</small>
+    </div>
+    <div class="flex flex-column gap-2 mb-2">
+      <label for="description">Event's description</label>
+      <textarea rows="5" cols="30" pInputTextarea id="description" aria-describedby="description-help" formControlName="description"></textarea>
+      <small id="description-help">Give the event a description!</small>
+    </div>
+    <p-button type="submit" label="Submit"></p-button>
+  </p-fieldset>
+</form>

@@ -1,0 +1,7 @@
+<h1 class="dark">Event list</h1>
+<p-button icon="pi pi-plus" routerLink="/create" [rounded]="true"></p-button>
+@for (event of events; track event.id){
+  <app-event-item [msg]="'Welcome'" [event]="event">{{event.name}}</app-event-item>
+  <p-divider></p-divider>
+}
+

@@ -1,0 +1,15 @@
+@if (event) {
+<p-card header="{{event.name}}" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />    
+        </ng-template>
+        <i class="pi pi-thumbs-up mr-4 p-text-secondary" pBadge style="font-size: 2rem" value="{{event.likes}}"></i>
+        <p *ngIf="event">
+            {{event.description}}
+        </p>
+        <p-tag severity="info" value="{{event.start | date:'yyyy-MM-dd HH:mm'}}"></p-tag>
+        <ng-template pTemplate="footer">
+            <a [routerLink]="['']" class="p-button">Go back</a>
+        </ng-template>
+    </p-card>
+}
